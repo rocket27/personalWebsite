@@ -1,0 +1,57 @@
+.owner-card {
+  @extend %centered;
+
+  width: 100%;
+  max-width: 360px;
+  padding: $indent;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.54);
+  color: white;
+
+  &__line {
+    margin-bottom: $half-indent;
+    padding-bottom: $half-indent;
+    border-bottom: 1px solid $orange;
+
+    &--top-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--middle-line {
+    }
+  }
+
+  &__owner-image-wrapper {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    margin-right: $indent;
+    overflow: hidden;
+    border: 2px solid $orange;
+    border-radius: 50%;
+  }
+
+  &__owner-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    font-family: 'robotoSlabBold';
+    font-size: 24px;
+  }
+
+  &__description {
+    font-family: 'SFUITextMedium';
+    font-size: 16px;
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: center;
+  }
+}

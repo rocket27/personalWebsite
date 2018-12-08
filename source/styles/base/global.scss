@@ -33,7 +33,8 @@ ul {
   list-style: none;
 }
 
-p {
+p,
+figure {
   margin: 0;
 }
 
@@ -60,6 +61,43 @@ h6 {
   font-weight: normal;
 }
 
+button {
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
 .index-page {
-  // position: relative;
+  position: relative;
+  min-height: 100vh;
+}
+
+.button {
+  @extend %main-page-button;
+
+  border: 1px solid #107929;
+  background-image: linear-gradient(-90deg, #2fcb53, #269f42);
+
+  &__icon-wrapper {
+    width: 30px;
+    height: 30px;
+    margin-right: $half-indent;
+  }
+
+  &__icon {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &--menu-button {
+    width: 100%;
+  }
+
+  &--github {
+    border: 1px solid #150a27;
+    background-image: linear-gradient(-270deg, #8241f9, #4e277b);
+  }
 }
