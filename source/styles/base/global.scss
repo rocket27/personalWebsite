@@ -69,11 +69,6 @@ button {
   cursor: pointer;
 }
 
-.index-page {
-  position: relative;
-  min-height: 100vh;
-}
-
 .button {
   @extend %main-page-button;
 

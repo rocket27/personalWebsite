@@ -6,7 +6,9 @@ const IndexPage = () => {
     return (
         <div className="index-page">
             <ParallaxContainer />
-            <OwnerCard />
+            <div className="index-page__inner">
+                <OwnerCard />
+            </div>
         </div>
     );
 };

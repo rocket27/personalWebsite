@@ -1,12 +1,28 @@
 .owner-card {
-  @extend %centered;
-
+  position: relative;
   width: 100%;
   max-width: 360px;
-  padding: $indent;
+  height: 480px;
+  transform-style: preserve-3d;
+  transition-duration: $flip-card-transition;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.54);
   color: white;
+
+  &__flipbox-card {
+    @extend %stretch;
+
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+
+    &--back {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__content {
+    padding: $indent;
+  }
 
   &__line {
     margin-bottom: $half-indent;
