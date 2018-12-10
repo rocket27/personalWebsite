@@ -1,0 +1,15 @@
+.page-own-projects {
+  @extend %section-layout;
+
+  background-image: url('../../assets/images/about-bg.jpg');
+
+  &::before {
+    @extend %page-background-mask;
+  }
+
+  &__content {
+    display: flex;
+    position: relative;
+    padding: 48px 0;
+  }
+}

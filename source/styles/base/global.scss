@@ -69,11 +69,31 @@ button {
   cursor: pointer;
 }
 
+#react-container {
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-width;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
 .button {
   @extend %main-page-button;
 
   border: 1px solid #107929;
   background-image: linear-gradient(-90deg, #2fcb53, #269f42);
+
+  &:hover {
+    color: $orange;
+
+    .button__icon {
+      fill: $orange;
+    }
+  }
 
   &__icon-wrapper {
     width: 30px;
@@ -83,8 +103,10 @@ button {
 
   &__icon {
     display: block;
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    transition: $transition;
+    fill: $white;
   }
 
   &--menu-button {
@@ -94,5 +116,9 @@ button {
   &--github {
     border: 1px solid #150a27;
     background-image: linear-gradient(-270deg, #8241f9, #4e277b);
+  }
+
+  &--back {
+    margin: auto auto 0;
   }
 }

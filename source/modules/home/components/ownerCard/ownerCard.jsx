@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ReactSVG from 'react-svg';
 import MENU_ITEMS from '../../../../enums/menuItems';
 
@@ -57,17 +58,41 @@ class OwnerCard extends Component {
                                             key={index}
                                             className="main-nav__list-item"
                                         >
-                                            <button
-                                                className="menu-nav__button button button--menu-button"
-                                                onClick={
-                                                    menuItem.type !== 'redirect'
-                                                        ? () =>
-                                                            this.flipBoxHandler()
-                                                        : () => null
-                                                }
-                                            >
-                                                {menuItem.menuItem}
-                                            </button>
+                                            {menuItem.type !== 'redirect' ? (
+                                                <button
+                                                    className="menu-nav__button button button--menu-button"
+                                                    onClick={
+                                                        menuItem.type !==
+                                                        'redirect'
+                                                            ? () =>
+                                                                this.flipBoxHandler()
+                                                            : () => null
+                                                    }
+                                                >
+                                                    <ReactSVG
+                                                        src={menuItem.iconPath}
+                                                        className="button__icon-wrapper"
+                                                        svgClassName="button__icon"
+                                                    />
+                                                    <span>
+                                                        {menuItem.menuItem}
+                                                    </span>
+                                                </button>
+                                            ) : (
+                                                <Link
+                                                    className="menu-nav__button button button--menu-button"
+                                                    to={menuItem.stateName}
+                                                >
+                                                    <ReactSVG
+                                                        src={menuItem.iconPath}
+                                                        className="button__icon-wrapper"
+                                                        svgClassName="button__icon"
+                                                    />
+                                                    <span>
+                                                        {menuItem.menuItem}
+                                                    </span>
+                                                </Link>
+                                            )}
                                         </li>
                                     ))}
                                 </ul>
@@ -91,8 +116,17 @@ class OwnerCard extends Component {
                     </div>
                 </div>
                 <div className="owner-card__flipbox-card owner-card__flipbox-card--back">
-                    <div className="owner-card__content">Контакты</div>
-                    <button onClick={() => this.flipBoxHandler()}>Back</button>
+                    <div className="owner-card__content">
+                        <div className="owner-card__line owner-card__line--top-line">
+                            <h1>Контактная информация</h1>
+                        </div>
+                        <button
+                            className="button button--back"
+                            onClick={() => this.flipBoxHandler()}
+                        >
+                            Back
+                        </button>
+                    </div>
                 </div>
             </section>
         );

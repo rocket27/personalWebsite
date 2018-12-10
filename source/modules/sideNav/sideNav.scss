@@ -1,0 +1,11 @@
+.sideNav {
+  flex: 1 0 auto;
+  max-width: 280px;
+  padding-right: 40px;
+
+  &__list-item-link {
+    &--active {
+      background-color: red;
+    }
+  }
+}

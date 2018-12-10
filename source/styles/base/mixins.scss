@@ -22,16 +22,31 @@
 
   display: flex;
   align-items: center;
-  justify-content: center;
   min-height: 48px;
   padding: 8px 24px;
   border-radius: $border-radius;
-  opacity: 0.67;
+  // opacity: 0.67;
   color: $white;
 
   &:hover {
-    opacity: 1;
+    // opacity: 1;
   }
+}
+
+%section-layout {
+  position: relative;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+%page-background-mask {
+  @extend %stretch;
+
+  content: '';
+  display: block;
+  background-color: $transparent-white;
 }
 
 // Adaptive
