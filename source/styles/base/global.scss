@@ -24,6 +24,7 @@ body {
   flex-direction: column;
   height: 100%;
   margin: 0;
+  color: $primary;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -115,7 +116,7 @@ button {
 
   &--github {
     border: 1px solid #150a27;
-    background-image: linear-gradient(-270deg, #8241f9, #4e277b);
+    background-image: $purple-gradient;
   }
 
   &--back {

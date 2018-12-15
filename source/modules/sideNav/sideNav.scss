@@ -2,10 +2,45 @@
   flex: 1 0 auto;
   max-width: 280px;
   padding-right: 40px;
+  font-size: 18px;
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+  }
 
   &__list-item-link {
+    @extend %transition;
+
+    display: block;
+    position: relative;
+    padding: 8px 16px 8px 32px;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0;
+      height: 0;
+      transform: translateY(-50%);
+      border-top: 10px solid transparent;
+      border-right: 16px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 16px solid transparent;
+    }
+
+    &:hover {
+      color: $green;
+    }
+
     &--active {
-      background-color: red;
+      color: $green;
+
+      &::before {
+        border-left-color: $green;
+      }
     }
   }
 }

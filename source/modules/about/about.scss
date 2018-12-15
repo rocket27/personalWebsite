@@ -1,10 +1,10 @@
 .page-about {
-  @extend %section-layout;
+  // @extend %section-layout;
 
-  background-image: url('../../assets/images/about-bg.jpg');
+  // background-image: url('../../assets/images/about-bg.jpg');
 
   &::before {
-    @extend %page-background-mask;
+    // @extend %page-background-mask;
   }
 
   &__content {

@@ -11,9 +11,10 @@ export const Router = () => {
         <HashRouter>
             <Switch>
                 <Route exact path="/" component={IndexPage} />
-                <Route path="/about" component={AboutPage} />
-                <Route path="/own-projects" component={OwnProjects} />
+                <Route exact path="/about" component={AboutPage} />
+                <Route exact path="/own-projects" component={OwnProjects} />
                 <Route
+                    exact
                     path="/production-projects"
                     component={ProductionProjects}
                 />
